@@ -103,14 +103,14 @@ public static String id, nama, jk, tglp,nik, nopes, nokur,tglb, x;
                     datapenumpang();
                     // KotaTujuan, NoPesawat, no kursi, booking id, nik, nama, gender, tglberangkat, tgl kembali, kota asal
                     c[i] = new Citilink(x,nopes,nokur,id,nik,nama,jk,tglb,tglp,kotaa);
-                        System.out.println("Harga tiket \t\t:"+harga);
+                        System.out.println("Harga tiket \t\t:"+ c[i].getHarga());
                         System.out.println("-------------");
                     }
                     for(int i=0; i<jum;i++){
                         total=total+c[i].getHarga();
                     }
                     for(int i= 0;i<jum;i++){
-                        l[i].printSemua();
+                        c[i].printSemua();
                     }
                     System.out.println("================================");
                     System.out.println("Total Harga = Rp"+total);

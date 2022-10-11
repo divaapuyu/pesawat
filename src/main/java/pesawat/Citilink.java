@@ -1,10 +1,5 @@
 
 package pesawat;
-
-/**
- *
- * @author HabibFr
- */
 public class Citilink extends tiket {
 
     private int jumlahPenumpang, harga;
@@ -81,18 +76,18 @@ public class Citilink extends tiket {
     }
     
     public void printSemua() {
-        System.out.println("===< DATA PENUMPANG LION AIR >===");
+        System.out.println("===< PRINT DATA PENUMPANG CITILINK >===");
         System.out.println("BookingID \t\t: " + getBookingID());
         System.out.println("NIK \t\t\t: " + getNik());
-        System.out.println("Nama \t\t: " + getNama());
-        System.out.println("Jenis Kelamin \t: " + getJenis_kelamin());
+        System.out.println("Nama \t\t\t: " + getNama());
+        System.out.println("Jenis Kelamin \t\t: " + getJenis_kelamin());
         System.out.println("Kota Asal \t\t: " + getKotaAsal());
         System.out.println("Kota Tujuan \t\t: " + getKotaTujuan());
-        System.out.println("Tgl Berangkat \t: " + getTglberangkat());
+        System.out.println("Tgl Berangkat \t\t: " + getTglberangkat());
         System.out.println("Tgl Kembali \t\t: " + getTglkembali());
         System.out.println("No Pesawat \t\t: " + getNoPesawat());
         System.out.println("No Kursi \t\t: " + getNoKursi());
-        System.out.println("Harga Tiket \t\tu: " + getHarga() + "\n");
+        System.out.println("Harga Tiket \t\t: " + getHarga() + "\n");
 
         }
 
