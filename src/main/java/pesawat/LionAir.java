@@ -1,9 +1,4 @@
 package pesawat;
-
-/**
- *
- * @author HabibFr
- */
 public class LionAir extends tiket {
 
     private int jumlahPenumpang, harga;
