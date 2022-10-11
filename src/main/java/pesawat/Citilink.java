@@ -1,10 +1,5 @@
 
 package pesawat;
-
-/**
- *
- * @author HabibFr
- */
 public class Citilink extends tiket {
 
     private int jumlahPenumpang, harga;
