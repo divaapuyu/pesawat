@@ -2,7 +2,9 @@
 package pesawat;
 
 public class tiket {
-    private String bookingID, nik, nama, jenis_kelamin, tglberangkat, tglkembali, kotaAsal;
+
+    String bookingID;
+    public String nik, nama, jenis_kelamin, tglberangkat, tglkembali, kotaAsal;
 
     public tiket(String bookingID, String nik, String nama, String jenis_kelamin, String tglberangkat, String tglkembali, String kotaAsal) {
         this.bookingID = bookingID;

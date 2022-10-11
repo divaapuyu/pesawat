@@ -1,104 +1,174 @@
-
 package pesawat;
 
 import java.io.*;
 
 public class mainpesawat {
-
+public static BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+public static String id, nama, jk, tglp,nik, nopes, nokur,tglb, x;
+      
     public static void main(String[] args) {
-        BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
         //deklarasi
-        int kotat=0;
+        int kotat=0,harga=0, pilih=0, total=0;
+        
         //bali, lombok, jakarta, jogja, balikpapan, makassar, surabaya;
         //objek subclass
         //jumlahpenumpang, kotatujuan, nopesawat, nokursi, bookingID, nik, nama, jenis_kelamin, tglberangkat, tglkembali, kotaasal
-        LionAir l = new LionAir(0,"","","","","","","","","","");
-        Citilink c = new Citilink(0,"","","","","","","","","","");
+//        LionAir l = new LionAir(0,"","","","","","","","","","");
+//        Citilink c = new Citilink(0,"","","","","","","","","","");
+        
+        
         
         
         try{
-            System.out.print("\n-------------PEMESANAN TIKET PESAWAT---------------");
-            System.out.print("Masukkan jumlah penumpang : ");
-            int jum = Integer.parseInt(br.readLine());
-            System.out.print("Kota Asal Anda Adalah? ");
-            String kotaa = br.readLine();
-            if(kotaa.equals("surabaya")){
-                System.out.print("Terdapat pilihan rute yang dapat anda pilih yaitu : \n 1. Bali\n2. Lombok\n3. Jakarta\n4. Yogyakarta\n5. Balikpapan\n6. Makassar\nPilih kota : ");
-            kotat = Integer.parseInt(br.readLine());
-            }
-            if(kotaa.equals("jakarta")){
-                System.out.print("Terdapat pilihan rute yang dapat anda pilih yaitu : \n 1. Bali\n2. Lombok\n3. Surabaya\n4. Yogyakarta\n5. Balikpapan\n6. Makassar\nPilih kota : ");
-            kotat = Integer.parseInt(br.readLine());
-            }
-            System.out.print("Apakah anda ingin memesan tiket untuk pulang dan pergi?(ya=1, tidak=0)");
-            int pilih = Integer.parseInt(br.readLine());
-            System.out.print("Masukkan Tanggal Keberangkatan : ");
-            int tglb = Integer.parseInt(br.readLine());
-            if(pilih==1){
-                System.out.print("Masukkan Tanggal Kembali : ");
-                int tglp = Integer.parseInt(br.readLine());
-            }
-            System.out.print("Terdapat 2 pilihan maskapai yang sesuai dengan rute anda yaitu :\n1. Lion Air\n2. Citilink\nPilih Maskapai : ");
-            int maskapai = Integer.parseInt(br.readLine());
-            //Lion Air
-            if(maskapai==1){
-                System.out.println("==<SELAMAT DATANG DI LION AIR>==");
-                //Surabaya
-                if (kotaa.equals("surabaya")){
-                    if(kotat==1||kotat==2){
-                        int hargat=500000;
+            do{
+                System.out.println("\n-------------PEMESANAN TIKET PESAWAT---------------");
+                System.out.print("Masukkan jumlah penumpang : ");
+                int jum = Integer.parseInt(br.readLine());
+                LionAir l[] = new LionAir[jum];
+                Citilink c[] = new Citilink[jum];
+                System.out.print("Kota Asal Anda Adalah? ");
+                String kotaa = br.readLine();
+               
+                if(kotaa.equalsIgnoreCase("surabaya")){
+                    System.out.print("Terdapat pilihan rute yang dapat anda pilih yaitu : \n1. Bali\n2. Lombok\n3. Jakarta\n4. Yogyakarta\n5. Balikpapan\n6. Makassar\nPilih kota : ");
+                kotat = Integer.parseInt(br.readLine());
+                
+                    if(kotat == 1){
+                        x = "Bali";
+                    }else if(kotat == 2){
+                        x = "Lombok";
+                    }else if (kotat == 3){
+                        x = "Jakarta";
+                    }else if(kotat == 4){
+                        x = "Yogyakarta";
+                    }else if(kotat == 5){
+                        x = "Balikpapan";
+                    }else if(kotat == 6){
+                        x = "Makassar";
                     }
-                    if(kotat==3||kotat==4){
-                        int hargat=600000;
-                    }
-                    if(kotat==5||kotat==6){
-                        int hargat=700000;
-                    }
+                    System.out.println("---------------------------------------------------");
                 }
-                //Jakarta
-                if (kotaa.equals("jakarta")){
-                    if(kotat==1||kotat==2){
-                        int hargat=700000;
-                    }
-                    if(kotat==3||kotat==4){
-                        int hargat=750000;
-                    }
-                    if(kotat==5||kotat==6){
-                        int hargat=800000;
+                if(kotaa.equals("jakarta")){
+                    System.out.print("Terdapat pilihan rute yang dapat anda pilih yaitu :\n1. Bali\n2. Lombok\n3. Surabaya\n4. Yogyakarta\n5. Balikpapan\n6. Makassar\nPilih kota : ");
+                kotat = Integer.parseInt(br.readLine());
+                    if(kotat == 1){
+                        x = "Bali";
+                    }else if(kotat == 2){
+                        x = "Lombok";
+                    }else if (kotat == 3){
+                        x = "Surabaya";
+                    }else if(kotat == 4){
+                        x = "Yogyakarta";
+                    }else if(kotat == 5){
+                        x = "Balikpapan";
+                    }else if(kotat == 6){
+                        x = "Makassar";
                     }
                 }
                 
-                
-            }
-            //Citilink
-            if(maskapai==2){
-                System.out.println("==<SELAMAT DATANG DI CITILINK>==");
-                //Surabaya
-                if (kotaa.equals("surabaya")){
-                    if(kotat==1||kotat==2){
-                        int hargat=700000;
-                    }
-                    if(kotat==3||kotat==4){
-                        int hargat=800000;
-                    }
-                    if(kotat==5||kotat==6){
-                        int hargat=850000;
-                    }
+                System.out.print("Apakah anda ingin memesan tiket untuk pulang dan pergi?(ya=1, tidak=0)");
+                pilih = Integer.parseInt(br.readLine());
+                System.out.print("Masukkan Tanggal Keberangkatan : ");
+                tglb = br.readLine();
+                if(pilih==1){
+                    System.out.print("Masukkan Tanggal Kembali : ");
+                    String tglp = br.readLine();
                 }
-                //Jakarta
-                if (kotaa.equals("jakarta")){
-                    if(kotat==1||kotat==2){
-                        int hargat=1000000;
+                System.out.print("---------------------------------------------------\nTerdapat 2 pilihan maskapai yang sesuai dengan rute anda yaitu :\n1. Lion Air\n2. Citilink\nPilih Maskapai : ");
+                int maskapai = Integer.parseInt(br.readLine());
+                //Lion Air
+                if(maskapai==1){
+                    System.out.println("==<SELAMAT DATANG DI LION AIR>==");
+//                    //Surabaya
+//                    if (kotaa.equals("surabaya")){
+//                        if(kotat==1||kotat==2){
+//                            harga=500000;
+//                        }
+//                        if(kotat==3||kotat==4){
+//                            harga=600000;
+//                        }
+//                        if(kotat==5||kotat==6){
+//                            harga=700000;
+//                        }
+//                    }
+//                    //Jakarta
+//                    if (kotaa.equals("jakarta")){
+//                        if(kotat==1||kotat==2){
+//                            harga=700000;
+//                        }
+//                        if(kotat==3||kotat==4){
+//                            harga=750000;
+//                        }
+//                        if(kotat==5||kotat==6){
+//                            harga=800000;
+//                        }
+//                    }
+                    for(int i=0;i<jum;i++){
+                    datapenumpang();
+                    // KotaTujuan, NoPesawat, no kursi, booking id, nik, nama, gender, tglberangkat, tgl kembali, kota asal
+                    l[i] = new LionAir(x,nopes,nokur,id,nik,nama,jk,tglb,tglp,kotaa);
+                        System.out.println("Harga tiket \t\t:"+ l[i].getHarga());
+                        
+                        
                     }
-                    if(kotat==3||kotat==4){
-                        int hargat=750000;
+                    
+                   
+                    for(int i=0; i<jum;i++){
+                        total=total+l[i].getHarga();
+                        
                     }
-                    if(kotat==5||kotat==6){
-                        int hargat=900000;
+                    for(int i= 0;i<jum;i++){
+                        l[i].printSemua();
                     }
+                    System.out.println("================================");
+                    System.out.println("Total Harga = Rp"+total);
+                    System.out.println("================================");
                 }
-            }
-            
+                //Citilink
+                if(maskapai==2){
+                    System.out.println("==<SELAMAT DATANG DI CITILINK>==");
+                    //Surabaya
+                    if (kotaa.equals("surabaya")){
+                        if(kotat==1||kotat==2){
+                            harga=700000;
+                        }
+                        if(kotat==3||kotat==4){
+                            harga=800000;
+                        }
+                        if(kotat==5||kotat==6){
+                            harga=850000;
+                        }
+                    }
+                    //Jakarta
+                    if (kotaa.equals("jakarta")){
+                        if(kotat==1||kotat==2){
+                            harga=1000000;
+                        }
+                        if(kotat==3||kotat==4){
+                            harga=750000;
+                        }
+                        if(kotat==5||kotat==6){
+                            harga=900000;
+                        }
+                    }
+                    for(int i=0;i<jum;i++){
+                    datapenumpang();
+                        System.out.println("Harga tiket \t\t:"+harga);
+                        System.out.println("-------------");
+                    }
+                    System.out.println("================================");
+                    for(int i=0; i<jum;i++){
+                        total=total+c[i].getHarga();
+                        
+                    }
+                    System.out.println("Total Harga = Rp"+total);
+                    System.out.println("================================");
+                }
+                System.out.print("Pesan tiket lagi?(ya=1, tidak=0) ");
+                pilih = Integer.parseInt(br.readLine());
+                total = 0;
+            }while(pilih==1);
+            System.exit(0);
             
             
         }catch(Exception e){
@@ -107,7 +177,18 @@ public class mainpesawat {
     }
     
     public static void datapenumpang()throws IOException{
-        System.out.println("");
-    }
-    
+        System.out.print("Booking ID \t\t: ");
+         id = br.readLine();
+        System.out.print("NIK \t\t\t: ");
+         nik = br.readLine();
+        System.out.print("Nama \t\t\t: ");
+         nama = br.readLine();
+        System.out.print("Jenis Kelamin(P/L) \t: ");
+         jk = br.readLine();
+        System.out.print("No.Pesawat \t\t: ");
+         nopes = br.readLine();
+        System.out.print("No.Kursi \t\t: ");
+         nokur = br.readLine();
+        
+    } 
 }
