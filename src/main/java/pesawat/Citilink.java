@@ -8,6 +8,7 @@ public class Citilink extends tiket {
 
     public Citilink( String kotaTujuan, String noPesawat, String noKursi, String bookingID, String nik, String nama, String jenisKelamin, String tglBerangkat, String tglKembali, String kotaAsal) {
         super(bookingID, nik, nama, jenisKelamin, tglBerangkat, tglKembali, kotaAsal);
+        this.tglkembali = tglkembali;
         this.jumlahPenumpang = jumlahPenumpang;
         this.kotaTujuan = kotaTujuan;
         this.noPesawat = noPesawat;

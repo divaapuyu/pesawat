@@ -63,7 +63,7 @@ public static String id, nama, jk, tglp,nik, nopes, nokur,tglb, x;
                 tglb = br.readLine();
                 if(pilih==1){
                     System.out.print("Masukkan Tanggal Kembali : ");
-                    String tglp = br.readLine();
+                    tglp = br.readLine();
                 }
                 System.out.print("---------------------------------------------------\nTerdapat 2 pilihan maskapai yang sesuai dengan rute anda yaitu :\n1. Lion Air\n2. Citilink\nPilih Maskapai : ");
                 int maskapai = Integer.parseInt(br.readLine());
