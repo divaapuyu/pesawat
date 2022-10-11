@@ -79,43 +79,15 @@ public static String id, nama, jk, tglp,nik, nopes, nokur,tglb, x;
                 //Lion Air
                 if(maskapai==1){
                     System.out.println("==<SELAMAT DATANG DI LION AIR>==");
-//                    //Surabaya
-//                    if (kotaa.equals("surabaya")){
-//                        if(kotat==1||kotat==2){
-//                            harga=500000;
-//                        }
-//                        if(kotat==3||kotat==4){
-//                            harga=600000;
-//                        }
-//                        if(kotat==5||kotat==6){
-//                            harga=700000;
-//                        }
-//                    }
-//                    //Jakarta
-//                    if (kotaa.equals("jakarta")){
-//                        if(kotat==1||kotat==2){
-//                            harga=700000;
-//                        }
-//                        if(kotat==3||kotat==4){
-//                            harga=750000;
-//                        }
-//                        if(kotat==5||kotat==6){
-//                            harga=800000;
-//                        }
-//                    }
                     for(int i=0;i<jum;i++){
                     datapenumpang();
                     // KotaTujuan, NoPesawat, no kursi, booking id, nik, nama, gender, tglberangkat, tgl kembali, kota asal
                     l[i] = new LionAir(x,nopes,nokur,id,nik,nama,jk,tglb,tglp,kotaa);
                         System.out.println("Harga tiket \t\t:"+ l[i].getHarga());
-                        
-                        
+                        System.out.println("-------------");
                     }
-                    
-                   
                     for(int i=0; i<jum;i++){
                         total=total+l[i].getHarga();
-                        
                     }
                     for(int i= 0;i<jum;i++){
                         l[i].printSemua();
@@ -127,43 +99,24 @@ public static String id, nama, jk, tglp,nik, nopes, nokur,tglb, x;
                 //Citilink
                 if(maskapai==2){
                     System.out.println("==<SELAMAT DATANG DI CITILINK>==");
-                    //Surabaya
-                    if (kotaa.equals("surabaya")){
-                        if(kotat==1||kotat==2){
-                            harga=700000;
-                        }
-                        if(kotat==3||kotat==4){
-                            harga=800000;
-                        }
-                        if(kotat==5||kotat==6){
-                            harga=850000;
-                        }
-                    }
-                    //Jakarta
-                    if (kotaa.equals("jakarta")){
-                        if(kotat==1||kotat==2){
-                            harga=1000000;
-                        }
-                        if(kotat==3||kotat==4){
-                            harga=750000;
-                        }
-                        if(kotat==5||kotat==6){
-                            harga=900000;
-                        }
-                    }
                     for(int i=0;i<jum;i++){
                     datapenumpang();
+                    // KotaTujuan, NoPesawat, no kursi, booking id, nik, nama, gender, tglberangkat, tgl kembali, kota asal
+                    c[i] = new Citilink(x,nopes,nokur,id,nik,nama,jk,tglb,tglp,kotaa);
                         System.out.println("Harga tiket \t\t:"+harga);
                         System.out.println("-------------");
                     }
-                    System.out.println("================================");
                     for(int i=0; i<jum;i++){
                         total=total+c[i].getHarga();
-                        
                     }
+                    for(int i= 0;i<jum;i++){
+                        l[i].printSemua();
+                    }
+                    System.out.println("================================");
                     System.out.println("Total Harga = Rp"+total);
                     System.out.println("================================");
                 }
+                
                 System.out.print("Pesan tiket lagi?(ya=1, tidak=0) ");
                 pilih = Integer.parseInt(br.readLine());
                 total = 0;
@@ -190,5 +143,5 @@ public static String id, nama, jk, tglp,nik, nopes, nokur,tglb, x;
         System.out.print("No.Kursi \t\t: ");
          nokur = br.readLine();
         
-    } 
+    }
 }

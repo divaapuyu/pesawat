@@ -1,9 +1,5 @@
 package pesawat;
 
-/**
- *
- * @author HabibFr
- */
 public class LionAir extends tiket {
 
     private int jumlahPenumpang, harga;
@@ -69,20 +65,34 @@ public class LionAir extends tiket {
     public int getTotal() {
         return getHarga() * getJumlahPenumpang();
     }
-
-        public void printSemua() {
-        System.out.println("===< preview tiket citilink >===");
-        System.out.println("BookingID : " + getBookingID());
-        System.out.println("NIK : " + getNik());
-        System.out.println("Nama : " + getNama());
-        System.out.println("Kota Asal : " + getKotaAsal());
-        System.out.println("Kota Tujuan : " + getKotaTujuan());
-        System.out.println("Tgl Berangkat : " + getTglberangkat());
-        System.out.println("Tgl Kembali : " + getTglkembali());
-        System.out.println("No Pesawat : " + getNoPesawat());
-        System.out.println("No Kursi : " + getNoKursi());
-        System.out.println("Harga Tiket : " + getHarga() + "\n");
-
+    
+    @Override
+    public String getTglberangkat() {
+        return super.getTglberangkat();
     }
+    @Override
+    public String getTglkembali() {
+        return super.getTglkembali();
+    }
+    @Override
+    public String getJenis_kelamin() {
+        return super.getJenis_kelamin();
+    }
+    
+        public void printSemua() {
+        System.out.println("===< DATA PENUMPANG LION AIR >===");
+        System.out.println("BookingID \t\t: " + getBookingID());
+        System.out.println("NIK \t\t\t: " + getNik());
+        System.out.println("Nama \t\t: " + getNama());
+        System.out.println("Jenis Kelamin \t: " + getJenis_kelamin());
+        System.out.println("Kota Asal \t\t: " + getKotaAsal());
+        System.out.println("Kota Tujuan \t\t: " + getKotaTujuan());
+        System.out.println("Tgl Berangkat \t: " + getTglberangkat());
+        System.out.println("Tgl Kembali \t\t: " + getTglkembali());
+        System.out.println("No Pesawat \t\t: " + getNoPesawat());
+        System.out.println("No Kursi \t\t: " + getNoKursi());
+        System.out.println("Harga Tiket \t\t: " + getHarga() + "\n");
+
+        }
 
 }
