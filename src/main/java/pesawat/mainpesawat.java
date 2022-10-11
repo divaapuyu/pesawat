@@ -10,15 +10,6 @@ public static String id, nama, jk, tglp,nik, nopes, nokur,tglb, x;
         //deklarasi
         int kotat=0,harga=0, pilih=0, total=0;
         
-        //bali, lombok, jakarta, jogja, balikpapan, makassar, surabaya;
-        //objek subclass
-        //jumlahpenumpang, kotatujuan, nopesawat, nokursi, bookingID, nik, nama, jenis_kelamin, tglberangkat, tglkembali, kotaasal
-//        LionAir l = new LionAir(0,"","","","","","","","","","");
-//        Citilink c = new Citilink(0,"","","","","","","","","","");
-        
-        
-        
-        
         try{
             do{
                 System.out.println("\n-------------PEMESANAN TIKET PESAWAT---------------");
