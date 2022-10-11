@@ -76,7 +76,7 @@ public class Citilink extends tiket {
     }
     
     public void printSemua() {
-        System.out.println("===< PRINT DATA PENUMPANG CITILINK >===");
+        System.out.println("\n===< PRINT DATA PENUMPANG CITILINK >===");
         System.out.println("BookingID \t\t: " + getBookingID());
         System.out.println("NIK \t\t\t: " + getNik());
         System.out.println("Nama \t\t\t: " + getNama());
